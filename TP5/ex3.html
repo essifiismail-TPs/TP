@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Quiz</h1>
+    <button onclick="lancerQuiz()">Demarrer le Quiz</button>
+
+    <script>
+        let questions = [
+            ["Quelle est la capitale de la France?", "Paris"],
+            ["Quelle est la capitale de Maroc", "Rabat"],
+            ["Quelle est la capitale de algerie?", "Algerie"]
+        ];
+
+        function lancerQuiz() {
+            let score = 0;
+            let nbrquestions = questions.length;
+
+            for (let i = 0; i < nbrquestions; i++) {
+                let reponseutilisateur = prompt(questions[i][0]);
+
+                if (reponseutilisateur === questions[i][1]) {
+                    alert("reponse juste");
+                    score++;
+                } else {
+                    alert("reponse fausse");
+                }
+            }
+
+            alert("Vous avez repondu correctement a " + score + " questions sur " + nbrquestions + ".");
+        }
+    </script>
+
+</body>
+
+</html>
